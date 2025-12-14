@@ -1,0 +1,632 @@
+/* -------------------------------------- */
+/* 1. VARIÁVEIS E RESET (DARK MODE - MARÍTIMO/OURO/ROXO) */
+/* -------------------------------------- */
+
+:root {
+    /* Cores Vivas e Elegantes (Ajustadas) */
+    --color-primary: #3787ff; /* Verde Marítimo Escuro (Destaque Principal) */
+    --color-accent: #55ff88; /* Amarelo Dourado Suave (Acento/Alerta/Hover) */
+    --color-text-vibrant: #FFFFFF; /* Branco Puro para Títulos */
+    
+    /* Cores de Fundo (Mais próximas dos tons marinho/roxo escuro) */
+    --color-dark-bg: #1C1C28; /* Fundo Ultra Escuro Principal */
+    --color-mid-bg: #262635; /* Fundo Secundário/Cards */
+    --color-card-border: #444455; /* Borda Sutil */
+    --color-text-light: #F0F0F0; /* Texto Principal Suave */
+    --color-text-muted: #B0B0C0; /* Texto Secundário Cinza */
+    
+    /* Outros */
+    --border-radius-large: 8px;
+    --transition-speed: 0.3s;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.7); 
+    --sidebar-width: 280px;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* -------------------------------------- */
+/* 2. LAYOUT E COMPONENTES GERAIS */
+/* -------------------------------------- */
+
+.gh-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: var(--header-height);
+}
+
+.gh-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gh-section { 
+    padding: 60px 20px; 
+    text-align: center; 
+}
+
+.gh-section--light { 
+    background-color: var(--color-mid-bg); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.gh-section__intro {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gh-heading {
+    font-size: 2.5rem;
+    color: var(--color-text-vibrant); 
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-primary); 
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.gh-heading--secondary {
+    border-bottom-color: var(--color-accent); 
+}
+
+
+/* -------------------------------------- */
+/* 3. BOTÕES E TAGS */
+/* -------------------------------------- */
+
+.gh-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: var(--border-radius-large);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-speed);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+}
+
+.gh-button--primary {
+    background-color: var(--color-primary); 
+    color: var(--color-dark-bg);
+}
+
+.gh-button--primary:hover {
+    background-color: #00937a; 
+    transform: translateY(-2px);
+}
+
+.gh-button--accent {
+    background-color: var(--color-accent); 
+    color: var(--color-dark-bg);
+}
+
+.gh-button--accent:hover {
+    background-color: #e5ac00; 
+}
+
+.gh-button--large {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+}
+
+.gh-tag {
+    display: inline-block;
+    background-color: #353545;
+    color: var(--color-accent);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 5px 5px 10px 0;
+    border: 1px solid var(--color-accent);
+    white-space: nowrap;
+}
+
+.gh-tag--active {
+    background-color: var(--color-accent);
+    color: var(--color-dark-bg);
+    font-weight: 700;
+}
+
+
+/* -------------------------------------- */
+/* 4. NAVEGAÇÃO E SIDEBAR (CORRIGIDO E CENTRALIZADO) */
+/* -------------------------------------- */
+
+.gh-header {
+    background-color: var(--color-dark-bg);
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    top: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    
+    /* CORREÇÃO: Usando Flexbox para Mobile e Grid para Desktop */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo no desktop é reposicionado no grid */
+.gh-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+/* Ocultar o toggle na versão desktop */
+.gh-nav__toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.gh-nav--desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gh-nav--desktop .gh-nav__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    padding: 0;
+    margin: 0;
+}
+
+/* Força o logo a ocupar a posição central no layout desktop */
+.gh-nav--desktop .gh-nav__list--center {
+    justify-content: center;
+    flex-grow: 1; /* Permite que cresça e empurre as outras listas */
+}
+
+/* Esconde o logo lateral se ele estiver centralizado */
+.gh-header .gh-logo--desktop {
+    display: none;
+}
+
+/* Ajuste fino dos links para o layout centralizado */
+.gh-nav--desktop .gh-nav__list--left {
+    padding-left: 20px;
+}
+
+.gh-nav--desktop .gh-nav__list--right {
+    padding-right: 20px;
+}
+
+.gh-nav--desktop a {
+    color: var(--color-text-light);
+    font-weight: 500;
+    padding: 15px 5px; 
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.gh-nav--desktop a:hover {
+    color: var(--color-accent);
+}
+
+.gh-nav__active-link {
+    color: var(--color-accent) !important;
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 13px;
+}
+
+/* SIDEBAR e OVERLAY */
+.gh-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: var(--color-dark-bg); 
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.8);
+    z-index: 1100;
+    transform: translateX(100%); 
+    transition: transform 0.4s ease-in-out;
+    padding: 0; 
+}
+
+.gh-sidebar.is-open { transform: translateX(0); }
+.gh-sidebar__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--color-accent); 
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.gh-sidebar__list { list-style: none; padding-top: 40px; }
+.gh-sidebar__logo {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--color-card-border);
+}
+.gh-sidebar__list li:not(.gh-sidebar__logo):not(.gh-sidebar__cta) {
+    border-bottom: 1px solid #333345; 
+}
+.gh-sidebar__link {
+    display: block;
+    padding: 15px 20px; 
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color var(--transition-speed);
+}
+.gh-sidebar__link:hover, .gh-sidebar__link.gh-nav__active-link {
+    background-color: var(--color-mid-bg);
+    color: var(--color-accent);
+}
+.gh-sidebar__link .fas { margin-right: 15px; width: 20px; }
+.gh-sidebar__cta { margin-top: 30px; padding: 20px; }
+
+.gh-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out;
+}
+.gh-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* -------------------------------------- */
+/* 5. COMPONENTES DE PÁGINA (HERO, CARDS) */
+/* -------------------------------------- */
+
+/* HERO (PÁGINA INICIAL) */
+.gh-hero {
+    background: linear-gradient(135deg, var(--color-dark-bg) 0%, #203040 100%); 
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.gh-hero__title {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--color-text-vibrant);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gh-hero__subtitle {
+    font-size: 1.4rem;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* GRID DE CARDS */
+.gh-card-grid {
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+}
+.gh-card-grid--3-cols { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.gh-card-grid--4-cols { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* CARD DE JOGO */
+.gh-game-card {
+    background-color: var(--color-mid-bg);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-card-border);
+    transition: all var(--transition-speed);
+    text-align: left;
+}
+
+.gh-game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    border-color: var(--color-accent); 
+}
+
+.gh-game-card__media {
+    width: 100%;
+    height: 200px;
+    background-color: #38384a; 
+    border-bottom: 3px solid var(--color-primary);
+    background-size: cover;
+    background-position: center;
+}
+
+.gh-game-card__body { padding: 20px; }
+.gh-game-card__title { color: var(--color-accent); margin-bottom: 0.5rem; }
+.gh-game-card__description { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+
+
+/* CARD DE TÓPICO/MEMBRO */
+.gh-topic-card {
+    background-color: var(--color-mid-bg);
+    padding: 25px;
+    border-radius: var(--border-radius-large);
+    border-bottom: 5px solid var(--color-primary);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+    text-align: left;
+    height: 100%; 
+}
+
+.gh-topic-card:hover {
+    transform: translateY(-5px);
+    background-color: #333345;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8); 
+    border-color: var(--color-accent); 
+}
+
+.gh-topic-card__icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.gh-topic-card__title {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+
+/* -------------------------------------- */
+/* 6. COMPONENTES INTERATIVOS */
+/* -------------------------------------- */
+
+/* ACORDEÃO (FAQ, DETALHES DE CURSO, HISTÓRIA) */
+.gh-accordion { max-width: 800px; margin: 30px auto; text-align: left; }
+.gh-accordion__item { margin-bottom: 10px; border-radius: var(--border-radius-large); overflow: hidden; }
+.gh-accordion__header {
+    background-color: var(--color-mid-bg);
+    color: var(--color-text-vibrant);
+    padding: 15px 20px;
+    border: 1px solid var(--color-card-border);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+}
+.gh-accordion__header:hover { background-color: #333345; }
+.gh-accordion__header .fas {
+    color: var(--color-primary);
+    transition: transform var(--transition-speed);
+}
+.gh-accordion__content {
+    background-color: #353545; 
+    padding: 0 20px;
+    border-left: 1px solid var(--color-card-border);
+    border-right: 1px solid var(--color-card-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+.gh-accordion__content p { padding: 15px 0; color: var(--color-text-muted); }
+.accordion-icon-rotated { transform: rotate(180deg); }
+
+
+/* BANNER DE DESTAQUE */
+.gh-banner {
+    width: 100%;
+    height: 350px;
+    background-color: var(--color-mid-bg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    text-align: left;
+}
+
+.gh-banner__content {
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    border-radius: var(--border-radius-large);
+    border-left: 5px solid var(--color-accent);
+}
+
+.gh-banner__title {
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+/* TIMELINE (SOBRE) */
+.gh-timeline-item {
+    text-align: left;
+    border-left: 3px solid var(--color-primary);
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.gh-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    border: 3px solid var(--color-dark-bg);
+}
+
+.gh-timeline-year {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* FORMULÁRIO (EQUIPE) */
+.gh-contact-form {
+    background-color: var(--color-mid-bg);
+    padding: 40px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-soft);
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.gh-contact-form input[type="text"],
+.gh-contact-form input[type="email"],
+.gh-contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-card-border);
+    background-color: #333345;
+    color: var(--color-text-light);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+}
+
+.gh-contact-form input:focus,
+.gh-contact-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+
+/* -------------------------------------- */
+/* 7. RODAPÉ E RESPONSIVIDADE (AJUSTADA) */
+/* -------------------------------------- */
+
+.gh-footer {
+    background-color: var(--color-mid-bg);
+    padding: 25px 5%;
+    text-align: center;
+    border-top: 1px solid var(--color-card-border);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+@media (min-width: 993px) {
+    /* Força o Header a ser Flexbox para Mobile/Tablet */
+    .gh-header {
+        display: flex;
+        justify-content: center; /* Centraliza a navegação dentro do header */
+    }
+    .gh-nav--desktop {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+        display: flex; /* Garante que a nav interna use flex */
+    }
+    .gh-header .gh-logo {
+        display: none; /* Esconde o logo lateral na versão desktop */
+    }
+    .gh-header .gh-logo--desktop {
+        display: block; /* Mostra o logo no centro */
+        order: 2; /* Garante que fique no meio */
+    }
+    .gh-nav--desktop .gh-nav__list--left {
+        order: 1; /* Links da esquerda */
+        justify-content: flex-end;
+    }
+    .gh-nav--desktop .gh-nav__list--right {
+        order: 3; /* Links da direita */
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    /* Configuração padrão para Mobile */
+    .gh-header {
+        height: 60px; 
+        padding: 0 20px;
+        display: flex; 
+        justify-content: space-between;
+    }
+    
+    /* Mostrar o toggle e esconder a navegação desktop no mobile */
+    .gh-nav__toggle {
+        display: block; 
+        order: 3;
+    }
+    
+    .gh-nav--desktop {
+        display: none;
+    }
+    
+    /* Garante que o logo lateral seja visível no mobile */
+    .gh-header .gh-logo {
+        display: block;
+        order: 1; 
+        margin: 0;
+    }
+    
+    .gh-header .gh-logo--desktop {
+        display: none;
+    }
+
+    /* Outros ajustes de mobile */
+    .gh-main-content { max-width: 100%; }
+    .gh-hero__title { font-size: 2rem; }
+    .gh-hero__subtitle { font-size: 1.1rem; }
+    .gh-section { padding: 40px 15px; }
+}

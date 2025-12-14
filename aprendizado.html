@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub | Aprendizado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="gh-header">
+        
+        <a href="index.html" class="gh-logo">
+            <i class="fas fa-gamepad"></i> GameHub
+        </a>
+        
+        <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="gh-nav gh-nav--desktop">
+            
+            <ul class="gh-nav__list gh-nav__list--left">
+                <li><a href="aprendizado.html" class="gh-nav__active-link">Aprendizado</a></li>
+                <li><a href="jogos.html">Nossos Jogos</a></li>
+            </ul>
+            
+            <a href="index.html" class="gh-logo gh-logo--desktop">
+                <i class="fas fa-gamepad"></i> GameHub
+            </a>
+            
+            <ul class="gh-nav__list gh-nav__list--right">
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="gh-sidebar" id="gh-sidebar">
+        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="gh-sidebar__list">
+            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
+            <li><a href="index.html" class="gh-sidebar__link"><i class="fas fa-home"></i> Inicial</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="sobre.html" class="gh-sidebar__link"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+        </ul>
+    </aside>
+    <div class="gh-overlay" id="gh-overlay"></div>
+
+    <main class="gh-main-content">
+        
+        <section class="gh-section gh-section--light">
+            <h1 class="gh-heading">Academia Dev: A Rota Completa da GameDev</h1>
+            <p class="gh-section__intro">Ensinamos as 9 disciplinas essenciais para desenvolver, prototipar e lançar seu próprio título. Clique em qualquer área e use o Acordeão para ver o conteúdo programático detalhado!</p>
+        </section>
+
+        <section class="gh-section" style="padding-top: 0; padding-bottom: 20px;">
+            <div class="gh-banner" style="background-color: var(--color-dark-bg); border: 2px solid var(--color-primary); height: 120px; align-items: center; justify-content: center; text-align: center; padding: 0 40px;">
+                <div style="max-width: 800px; padding: 0;">
+                    <p style="font-size: 1.2rem; color: var(--color-text-vibrant); font-weight: 500;"><i class="fas fa-chalkboard-teacher" style="color: var(--color-accent); margin-right: 15px;"></i> **Nova Turma:** As aulas de Scripting (Módulo I) começam dia 20 de Janeiro. Não perca!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gh-section" style="padding-top: 20px;">
+            <div class="gh-card-grid gh-card-grid--3-cols gh-area-grid">
+                
+                <div class="gh-topic-card" id="scripting">
+                    <i class="fas fa-code gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">1. Scripting (C#)</h3>
+                    <p>Domine a lógica para criar mecânicas de jogo, IA e sistemas de inventário em Unity.</p>
+                    <div class="gh-tags"><span class="gh-tag">C# Unity</span> <span class="gh-tag">IA</span> <span class="gh-tag">Algoritmos</span></div>
+                </div>
+
+                <div class="gh-topic-card" id="modelagem">
+                    <i class="fas fa-cube gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">2. Modelagem 3D</h3>
+                    <p>Curso completo de Blender para criação de ambientes e personagens Low-Poly.</p>
+                    <div class="gh-tags"><span class="gh-tag">Blender</span> <span class="gh-tag">Low-Poly</span> <span class="gh-tag">Assets</span></div>
+                </div>
+
+                <div class="gh-topic-card" id="animacao">
+                    <i class="fas fa-running gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">3. Animação & Rigging</h3>
+                    <p>Crie movimentos realistas para personagens usando Rigging, Cinemática e Keyframes.</p>
+                    <div class="gh-tags"><span class="gh-tag">Rigging</span> <span class="gh-tag">Keyframes</span> <span class="gh-tag">Cinemática</span></div>
+                </div>
+                
+                <div class="gh-topic-card" id="pixelart">
+                    <i class="fas fa-th gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">4. Pixel Art</h3>
+                    <p>Especialização em arte 2D de baixa resolução. Criação de spritesheets e tilesets.</p>
+                    <div class="gh-tags"><span class="gh-tag">Aseprite</span> <span class="gh-tag">Sprites</span> <span class="gh-tag">Paleta</span></div>
+                </div>
+                
+                <div class="gh-topic-card" id="gfx">
+                    <i class="fas fa-palette gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">5. Design GFX & Texturas</h3>
+                    <p>Iluminação, Shaders e criação de texturas PBR. Dê um visual profissional ao seu jogo.</p>
+                    <div class="gh-tags"><span class="gh-tag">PBR</span> <span class="gh-tag">Shaders</span> <span class="gh-tag">Iluminação</span></div>
+                </div>
+                
+                <div class="gh-topic-card" id="sfx">
+                    <i class="fas fa-volume-up gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">6. Sound Design (SFX)</h3>
+                    <p>Criação e mixagem de efeitos sonoros (SFX) e composição de trilhas originais (BGM).</p>
+                    <div class="gh-tags"><span class="gh-tag">Mixagem</span> <span class="gh-tag">Foley</span> <span class="gh-tag">Composição</span></div>
+                </div>
+                
+                <div class="gh-topic-card" id="hud">
+                    <i class="fas fa-desktop gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">7. HUD Maker (UI/UX)</h3>
+                    <p>Design de Interfaces (Menus e Botões) focado em Usabilidade para a melhor experiência do jogador.</p>
+                    <div class="gh-tags"><span class="gh-tag">UI/UX</span> <span class="gh-tag">Figma</span> <span class="gh-tag">Menus</span></div>
+                </div>
+
+                <div class="gh-topic-card" id="roteiro">
+                    <i class="fas fa-feather-alt gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">8. Roteiro e Narrativa</h3>
+                    <p>Técnicas de escrita para jogos, desenvolvimento de Lores profundos e diálogos memoráveis.</p>
+                    <div class="gh-tags"><span class="gh-tag">Lore</span> <span class="gh-tag">Diálogos</span> <span class="gh-tag">Não-Linear</span></div>
+                </div>
+                
+                <div class="gh-topic-card" id="level-design">
+                    <i class="fas fa-map-marked-alt gh-topic-card__icon"></i>
+                    <h3 class="gh-topic-card__title">9. Level Design</h3>
+                    <p>Criação de níveis (mapas, fases) que guiam o jogador, balanceiam o desafio e incentivam a exploração.</p>
+                    <div class="gh-tags"><span class="gh-tag">Fluxo</span> <span class="gh-tag">Pace</span> <span class="gh-tag">World Building</span></div>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <section class="gh-section gh-section--light">
+            <h2 class="gh-heading gh-heading--secondary">📖 Conteúdo Programático Destaque</h2>
+            <p class="gh-section__intro">Expanda um tópico para ver as principais ferramentas e módulos do curso.</p>
+            
+            <div class="gh-accordion">
+                
+                <div class="gh-accordion__item">
+                    <div class="gh-accordion__header" onclick="toggleAccordion(this)">
+                        Módulo Scripting C#: O caminho da Lógica à Funcionalidade
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="gh-accordion__content">
+                        <p>Cobrimos: Lógica Booleana, Estruturas de Dados, Classes e Objetos (OOP), Componentes Essenciais da Unity (Rigidbody, Collider), Sistemas de Invetário e Criação de IA (Pathfinding simples).</p>
+                    </div>
+                </div>
+
+                <div class="gh-accordion__item">
+                    <div class="gh-accordion__header" onclick="toggleAccordion(this)">
+                        Módulo Modelagem 3D: Blender e otimização para Games
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="gh-accordion__content">
+                        <p>Focamos em: Escultura Básica, Retopologia, Mapeamento UV, Criação de Texturas PBR e exportação correta de FBX/OBJ com pivots alinhados para as Engines Unity/Unreal.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer class="gh-footer">
+        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
+        <div class="gh-footer__links">
+            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

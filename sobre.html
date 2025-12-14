@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub | Sobre</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="gh-header">
+        
+        <a href="index.html" class="gh-logo">
+            <i class="fas fa-gamepad"></i> GameHub
+        </a>
+        
+        <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="gh-nav gh-nav--desktop">
+            
+            <ul class="gh-nav__list gh-nav__list--left">
+                <li><a href="aprendizado.html">Aprendizado</a></li>
+                <li><a href="jogos.html">Nossos Jogos</a></li>
+            </ul>
+            
+            <a href="index.html" class="gh-logo gh-logo--desktop">
+                <i class="fas fa-gamepad"></i> GameHub
+            </a>
+            
+            <ul class="gh-nav__list gh-nav__list--right">
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="sobre.html" class="gh-nav__active-link">Sobre</a></li>
+                <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="gh-sidebar" id="gh-sidebar">
+        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="gh-sidebar__list">
+            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
+            <li><a href="index.html" class="gh-sidebar__link"><i class="fas fa-home"></i> Inicial</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="sobre.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+        </ul>
+    </aside>
+    <div class="gh-overlay" id="gh-overlay"></div>
+
+    <main class="gh-main-content">
+        
+        <section class="gh-section gh-section--light">
+            <h1 class="gh-heading">Sobre a GameHub: Nossa História e Visão</h1>
+            <p class="gh-section__intro">Nossa missão é fechar a lacuna entre a paixão por jogos e a realidade do desenvolvimento profissional. Oferecemos um ecossistema completo de aprendizado e colaboração.</p>
+        </section>
+        
+        <section class="gh-section" style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <h2 class="gh-heading gh-heading--secondary" style="margin-left: 0;"><i class="fas fa-bullseye"></i> Nossa Filosofia</h2>
+            <p style="font-size: 1.1em; color: var(--color-text-light); margin-bottom: 30px;">Acreditamos que o futuro da GameDev é colaborativo. Aqui, você aprende fazendo, trabalhando lado a lado com mentores e outros alunos em projetos reais.</p>
+            
+            <div class="gh-card-grid gh-card-grid--3-cols">
+                <div style="text-align: center; padding: 15px;">
+                    <i class="fas fa-handshake" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="color: var(--color-accent); margin-top: 10px;">Colaboração</h4>
+                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Trabalho em equipe em projetos com prazos reais.</p>
+                </div>
+                <div style="text-align: center; padding: 15px;">
+                    <i class="fas fa-flask" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="color: var(--color-accent); margin-top: 10px;">Projetos Reais</h4>
+                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Tire ideias do papel, prototipe e lance o seu jogo.</p>
+                </div>
+                <div style="text-align: center; padding: 15px;">
+                    <i class="fas fa-globe-americas" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="color: var(--color-accent); margin-top: 10px;">Acesso Aberto</h4>
+                    <p style="font-size: 0.9em; color: var(--color-text-muted);">O conhecimento é livre. Todas as aulas são gratuitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gh-section gh-section--light">
+            <h2 class="gh-heading">⏳ Linha do Tempo da GameHub</h2>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                
+                <div class="gh-timeline-item">
+                    <p class="gh-timeline-year">2023 - A Faísca</p>
+                    <p style="color: var(--color-text-muted);">Criação do primeiro servidor Discord com 5 amigos dev. O foco inicial era trocar ideias sobre C# e Unity, mas rapidamente cresceu.</p>
+                </div>
+                
+                <div class="gh-timeline-item">
+                    <p class="gh-timeline-year">2024 - A Estruturação</p>
+                    <p style="color: var(--color-text-muted);">Expansão para 200 membros. Inclusão dos canais dedicados a Pixel Art e Sound Design. Lançamento do primeiro projeto colaborativo: 'The Void'.</p>
+                </div>
+                
+                <div class="gh-timeline-item">
+                    <p class="gh-timeline-year">2025 - Academia Dev</p>
+                    <p style="color: var(--color-text-muted);">Inauguração oficial das 9 disciplinas de aprendizado, com instrutores voluntários fixos. Lançamento da primeira leva de jogos para portfólio.</p>
+                </div>
+
+                <div class="gh-timeline-item">
+                    <p class="gh-timeline-year">Hoje - O Próximo Nível</p>
+                    <p style="color: var(--color-text-muted);">Com mais de 500 membros, o projeto foca em expansão para outras Engines e na mentoria de equipes para lançamentos comerciais de sucesso.</p>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="gh-section">
+            <h2 class="gh-heading gh-heading--secondary">Pronto para Fazer História?</h2>
+            <p class="gh-section__intro">O maior recurso no desenvolvimento de jogos é a comunidade. Junte-se à GameHub hoje e comece a criar o seu legado.</p>
+            <a href="#" class="gh-button gh-button--primary gh-button--large"><i class="fab fa-discord"></i> ENTRAR NO SERVIDOR OFICIAL</a>
+        </section>
+
+    </main>
+
+    <footer class="gh-footer">
+        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
+        <div class="gh-footer__links">
+            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

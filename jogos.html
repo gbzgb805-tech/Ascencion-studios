@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub | Nossos Jogos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="gh-header">
+        
+        <a href="index.html" class="gh-logo">
+            <i class="fas fa-gamepad"></i> GameHub
+        </a>
+        
+        <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="gh-nav gh-nav--desktop">
+            
+            <ul class="gh-nav__list gh-nav__list--left">
+                <li><a href="aprendizado.html">Aprendizado</a></li>
+                <li><a href="jogos.html" class="gh-nav__active-link">Nossos Jogos</a></li>
+            </ul>
+            
+            <a href="index.html" class="gh-logo gh-logo--desktop">
+                <i class="fas fa-gamepad"></i> GameHub
+            </a>
+            
+            <ul class="gh-nav__list gh-nav__list--right">
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="gh-sidebar" id="gh-sidebar">
+        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="gh-sidebar__list">
+            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
+            <li><a href="index.html" class="gh-sidebar__link"><i class="fas fa-home"></i> Inicial</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="sobre.html" class="gh-sidebar__link"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+        </ul>
+    </aside>
+    <div class="gh-overlay" id="gh-overlay"></div>
+
+    <main class="gh-main-content">
+        
+        <section class="gh-section gh-section--light">
+            <h1 class="gh-heading">Nossos Jogos: O Portfólio da Comunidade</h1>
+            <p class="gh-section__intro">Veja os resultados tangíveis da nossa Academia Dev. Muitos destes jogos foram criados do zero em apenas um semestre de mentoria.</p>
+            
+            <div class="gh-banner" style="background-image: url('placeholder-launch.jpg'); background-color: #2e2e4a; height: 180px;">
+                <div class="gh-banner__content">
+                    <h2 class="gh-banner__title"><i class="fas fa-cloud-upload-alt"></i> Publique o Seu!</h2>
+                    <p class="gh-banner__subtitle">Incentivamos e ajudamos você a lançar seu jogo em plataformas como Itch.io e Steam.</p>
+                    <a href="#" class="gh-button gh-button--primary">Submeter Meu Jogo</a>
+                </div>
+            </div>
+            
+            <div class="gh-center-content" style="margin-bottom: 30px;">
+                <div class="gh-tags" style="max-width: 1000px; margin: 0 auto;">
+                    <span class="gh-tag gh-tag--active" onclick="filterGames('all')">Todos</span>
+                    <span class="gh-tag" onclick="filterGames('acao')">Ação/Aventura</span>
+                    <span class="gh-tag" onclick="filterGames('rpg')">RPG</span>
+                    <span class="gh-tag" onclick="filterGames('pixel')">2D Pixel Art</span>
+                    <span class="gh-tag" onclick="filterGames('3d')">3D</span>
+                    <span class="gh-tag" onclick="filterGames('dev')">Em Desenvolvimento</span>
+                    <span class="gh-tag" onclick="filterGames('multi')">Multiplayer</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="gh-section">
+            <div class="gh-card-grid gh-card-grid--3-cols" id="game-list">
+                
+                <article class="gh-game-card" data-tags="rpg 3d" id="echoes">
+                    <div class="gh-game-card__media" style="background-color: #555;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">1. Cosmic Debris</h3>
+                        <p class="gh-game-card__description">Simulador de nave espacial com física realista e um sistema complexo de negociação intergaláctica.</p>
+                        <div class="gh-tags"><span class="gh-tag">Simulação</span><span class="gh-tag">3D</span><span class="gh-tag">Lançado</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--accent">Download</a>
+                    </div>
+                </article>
+
+                <article class="gh-game-card" data-tags="rpg pixel" id="dungeon">
+                    <div class="gh-game-card__media" style="background-color: #884;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">2. A Lenda do Bardo</h3>
+                        <p class="gh-game-card__description">RPG 2D estilo SNES com foco em história e combate por turnos. Arte e música feitas por 4 alunos.</p>
+                        <div class="gh-tags"><span class="gh-tag">RPG</span><span class="gh-tag">2D Pixel</span><span class="gh-tag">História</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--accent">Download</a>
+                    </div>
+                </article>
+
+                <article class="gh-game-card" data-tags="acao multi 3d" id="server">
+                    <div class="gh-game-card__media" style="background-color: #448;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">3. Server Shutdown</h3>
+                        <p class="gh-game-card__description">Jogo de tiro em primeira pessoa (FPS) competitivo, projeto final do curso de Networking.</p>
+                        <div class="gh-tags"><span class="gh-tag">Multiplayer</span><span class="gh-tag">FPS</span><span class="gh-tag">Online</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--accent">Download</a>
+                    </div>
+                </article>
+                
+                <article class="gh-game-card" data-tags="acao 3d" id="crypt">
+                    <div class="gh-game-card__media" style="background-color: #777;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">4. Silent Crypt</h3>
+                        <p class="gh-game-card__description">Jogo de terror psicológico com foco em Sound Design e iluminação. Feito por alunos de SFX e GFX.</p>
+                        <div class="gh-tags"><span class="gh-tag">Terror</span><span class="gh-tag">SFX</span><span class="gh-tag">3D</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--accent">Download</a>
+                    </div>
+                </article>
+
+                <article class="gh-game-card" data-tags="acao pixel dev" id="code">
+                    <div class="gh-game-card__media" style="background-color: #888;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">5. Prototype Z-0</h3>
+                        <p class="gh-game-card__description">Jogo de plataforma 2D em desenvolvimento. Buscando animadores e level designers para o próximo sprint.</p>
+                        <div class="gh-tags"><span class="gh-tag">Plataforma</span><span class="gh-tag">Dev</span><span class="gh-tag">JS</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--primary">Acompanhar Dev</a>
+                    </div>
+                </article>
+
+                <article class="gh-game-card" data-tags="rpg 3d" id="forge">
+                    <div class="gh-game-card__media" style="background-color: #999;"></div>
+                    <div class="gh-game-card__body">
+                        <h3 class="gh-game-card__title">6. Forge of Gods</h3>
+                        <p class="gh-game-card__description">Jogo de estratégia em tempo real com foco na economia e Level Design de mapas complexos.</p>
+                        <div class="gh-tags"><span class="gh-tag">Estratégia</span><span class="gh-tag">Level Design</span><span class="gh-tag">C#</span></div>
+                        <a href="#" class="gh-button gh-button--small gh-button--accent">Download</a>
+                    </div>
+                </article>
+
+            </div>
+            <div class="gh-center-content" style="margin-top: 50px;"><a href="#" class="gh-button gh-button--primary gh-button--large">Ver Mais Projetos</a></div>
+        </section>
+
+    </main>
+
+    <footer class="gh-footer">
+        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
+        <div class="gh-footer__links">
+            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
