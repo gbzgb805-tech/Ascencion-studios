@@ -3,12 +3,12 @@
 /* -------------------------------------- */
 
 :root {
-    /* Cores Vivas e Elegantes (Ajustadas) */
-    --color-primary: #3787ff; /* Verde Marítimo Escuro (Destaque Principal) */
-    --color-accent: #55ff88; /* Amarelo Dourado Suave (Acento/Alerta/Hover) */
+    /* Cores Vivas e Elegantes (Mantidas) */
+    --color-primary: #00A98F; /* Verde Marítimo Escuro (Destaque Principal) */
+    --color-accent: #FFC300; /* Amarelo Dourado Suave (Acento/Alerta/Hover) */
     --color-text-vibrant: #FFFFFF; /* Branco Puro para Títulos */
     
-    /* Cores de Fundo (Mais próximas dos tons marinho/roxo escuro) */
+    /* Cores de Fundo (Mantidas) */
     --color-dark-bg: #1C1C28; /* Fundo Ultra Escuro Principal */
     --color-mid-bg: #262635; /* Fundo Secundário/Cards */
     --color-card-border: #444455; /* Borda Sutil */
@@ -51,10 +51,11 @@ a:hover {
 /* 2. LAYOUT E COMPONENTES GERAIS */
 /* -------------------------------------- */
 
+/* Reduz o padding superior para compensar a altura maior do novo header */
 .gh-main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: var(--header-height);
+    padding-top: 100px; /* Ajuste para o header de duas linhas no desktop */
 }
 
 .gh-center-content {
@@ -158,86 +159,72 @@ a:hover {
 
 
 /* -------------------------------------- */
-/* 4. NAVEGAÇÃO E SIDEBAR (CORRIGIDO E CENTRALIZADO) */
+/* 4. NAVEGAÇÃO E SIDEBAR (NOVA ESTRUTURA) */
 /* -------------------------------------- */
 
 .gh-header {
     background-color: var(--color-dark-bg);
     position: fixed;
     width: 100%;
-    height: var(--header-height);
     top: 0;
     z-index: 1000;
-    padding: 0 5%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     
-    /* CORREÇÃO: Usando Flexbox para Mobile e Grid para Desktop */
+    /* Configuração inicial para Mobile */
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    height: var(--header-height);
+    padding: 0 20px;
 }
 
-/* Logo no desktop é reposicionado no grid */
-.gh-logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--color-primary);
-}
-
-/* Ocultar o toggle na versão desktop */
-.gh-nav__toggle {
-    display: none; 
-    background: none;
-    border: none;
-    color: var(--color-text-light);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.gh-nav--desktop {
+/* CONTAINER PARA ORGANIZAR O CABEÇALHO NO DESKTOP */
+.gh-header-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* LOGO CENTRAL (PARA DESKTOP) */
+.gh-logo--desktop {
+    font-size: 2.5rem; /* Aumenta o tamanho para ficar como título */
+    font-weight: 800;
+    color: var(--color-primary);
+    text-align: center;
+    padding-bottom: 5px;
+    display: none; /* Esconder por padrão */
+    border-bottom: 3px solid var(--color-primary);
+}
+
+/* NAVEGAÇÃO DESKTOP (A linha dos links) */
+.gh-nav--desktop {
+    display: none; /* Esconder por padrão */
+    width: 100%;
+    text-align: center;
+    margin-top: 10px; /* Espaçamento entre o logo e os links */
 }
 
 .gh-nav--desktop .gh-nav__list {
     list-style: none;
     display: flex;
+    justify-content: center; /* Centraliza a lista de links */
     align-items: center;
-    gap: 15px; 
+    gap: 25px; /* Aumenta o espaçamento entre os links */
     padding: 0;
     margin: 0;
-}
-
-/* Força o logo a ocupar a posição central no layout desktop */
-.gh-nav--desktop .gh-nav__list--center {
-    justify-content: center;
-    flex-grow: 1; /* Permite que cresça e empurre as outras listas */
-}
-
-/* Esconde o logo lateral se ele estiver centralizado */
-.gh-header .gh-logo--desktop {
-    display: none;
-}
-
-/* Ajuste fino dos links para o layout centralizado */
-.gh-nav--desktop .gh-nav__list--left {
-    padding-left: 20px;
-}
-
-.gh-nav--desktop .gh-nav__list--right {
-    padding-right: 20px;
 }
 
 .gh-nav--desktop a {
     color: var(--color-text-light);
     font-weight: 500;
-    padding: 15px 5px; 
-    font-size: 0.95rem;
+    padding: 5px 0; /* Ajusta o padding vertical */
+    font-size: 1rem;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .gh-nav--desktop a:hover {
@@ -245,13 +232,29 @@ a:hover {
 }
 
 .gh-nav__active-link {
-    color: var(--color-accent) !important;
+    color: var(--color-primary) !important; /* Cor do link ativo */
     font-weight: 700;
-    border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 13px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 3px;
 }
 
-/* SIDEBAR e OVERLAY */
+/* LOGO LATERAL (PARA MOBILE) */
+.gh-logo--mobile {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+/* TOGGLE MOBILE */
+.gh-nav__toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* SIDEBAR e OVERLAY (Manter) */
 .gh-sidebar {
     position: fixed;
     top: 0;
@@ -265,7 +268,6 @@ a:hover {
     transition: transform 0.4s ease-in-out;
     padding: 0; 
 }
-
 .gh-sidebar.is-open { transform: translateX(0); }
 .gh-sidebar__close {
     position: absolute;
@@ -565,67 +567,68 @@ a:hover {
 }
 
 @media (min-width: 993px) {
-    /* Força o Header a ser Flexbox para Mobile/Tablet */
+    /* Mudar o Header para o layout de duas linhas no Desktop */
     .gh-header {
+        height: auto; /* Altura flexível para o conteúdo */
+        display: block; /* Volta a ser block para centralizar o container */
+        padding: 0;
+    }
+
+    .gh-header-container {
         display: flex;
-        justify-content: center; /* Centraliza a navegação dentro do header */
+        flex-direction: column;
+        padding: 15px 20px; /* Padding ajustado para topo e laterais */
     }
+
+    .gh-logo--desktop {
+        display: inline-block; /* Mostrar o logo grande no desktop */
+    }
+
+    .gh-logo--mobile,
+    .gh-nav__toggle {
+        display: none; /* Esconder elementos de mobile */
+    }
+
     .gh-nav--desktop {
-        width: 100%;
-        max-width: 1200px;
-        padding: 0 20px;
-        display: flex; /* Garante que a nav interna use flex */
-    }
-    .gh-header .gh-logo {
-        display: none; /* Esconde o logo lateral na versão desktop */
-    }
-    .gh-header .gh-logo--desktop {
-        display: block; /* Mostra o logo no centro */
-        order: 2; /* Garante que fique no meio */
-    }
-    .gh-nav--desktop .gh-nav__list--left {
-        order: 1; /* Links da esquerda */
-        justify-content: flex-end;
-    }
-    .gh-nav--desktop .gh-nav__list--right {
-        order: 3; /* Links da direita */
-        justify-content: flex-start;
+        display: block; /* Mostrar a navegação de links centralizada */
     }
 }
 
 @media (max-width: 992px) {
-    
-    /* Configuração padrão para Mobile */
+    /* Manter a configuração padrão para Mobile */
     .gh-header {
-        height: 60px; 
+        height: var(--header-height); 
         padding: 0 20px;
         display: flex; 
         justify-content: space-between;
+        align-items: center;
     }
     
-    /* Mostrar o toggle e esconder a navegação desktop no mobile */
+    .gh-header-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* Mostrar o toggle e o logo mobile, esconder o desktop */
     .gh-nav__toggle {
         display: block; 
         order: 3;
     }
     
-    .gh-nav--desktop {
+    .gh-nav--desktop,
+    .gh-logo--desktop {
         display: none;
     }
     
-    /* Garante que o logo lateral seja visível no mobile */
-    .gh-header .gh-logo {
+    .gh-logo--mobile {
         display: block;
         order: 1; 
-        margin: 0;
-    }
-    
-    .gh-header .gh-logo--desktop {
-        display: none;
     }
 
     /* Outros ajustes de mobile */
-    .gh-main-content { max-width: 100%; }
+    .gh-main-content { padding-top: 60px; } /* Ajusta o padding para o header menor */
     .gh-hero__title { font-size: 2rem; }
     .gh-hero__subtitle { font-size: 1.1rem; }
     .gh-section { padding: 40px 15px; }

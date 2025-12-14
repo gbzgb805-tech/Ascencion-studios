@@ -11,32 +11,31 @@
 <body>
     
     <header class="gh-header">
-        
-        <a href="index.html" class="gh-logo">
-            <i class="fas fa-gamepad"></i> GameHub
-        </a>
-        
-        <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <nav class="gh-nav gh-nav--desktop">
+        <div class="gh-header-container">
             
-            <ul class="gh-nav__list gh-nav__list--left">
-                <li><a href="aprendizado.html">Aprendizado</a></li>
-                <li><a href="jogos.html">Nossos Jogos</a></li>
-            </ul>
+            <a href="index.html" class="gh-logo gh-logo--mobile">
+                <i class="fas fa-gamepad"></i> GameHub
+            </a>
+            
+            <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <a href="index.html" class="gh-logo gh-logo--desktop">
                 <i class="fas fa-gamepad"></i> GameHub
             </a>
             
-            <ul class="gh-nav__list gh-nav__list--right">
-                <li><a href="equipe.html">Equipe</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
-            </ul>
-        </nav>
+            <nav class="gh-nav gh-nav--desktop">
+                <ul class="gh-nav__list">
+                    <li><a href="index.html" class="gh-nav__active-link">Início</a></li>
+                    <li><a href="aprendizado.html">Aprendizado</a></li>
+                    <li><a href="jogos.html">Nossos Jogos</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <aside class="gh-sidebar" id="gh-sidebar">
@@ -45,7 +44,7 @@
         </button>
         <ul class="gh-sidebar__list">
             <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
-            <li><a href="index.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-home"></i> Inicial</a></li>
+            <li><a href="index.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-home"></i> Início</a></li>
             <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
             <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
             <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
