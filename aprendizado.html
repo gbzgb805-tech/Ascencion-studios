@@ -3,53 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub | Aprendizado</title>
+    <title>GameHub | Trilhas de Aprendizado</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
     <header class="gh-header">
         <div class="gh-header-container">
-            
-            <a href="index.html" class="gh-logo gh-logo--mobile">
-                <i class="fas fa-gamepad"></i> GameHub
-            </a>
-            
-            <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <a href="index.html" class="gh-logo gh-logo--desktop">
-                <i class="fas fa-gamepad"></i> GameHub
-            </a>
-            
+            <a href="index.html" class="gh-logo gh-logo--mobile"><i class="fas fa-gamepad"></i> GameHub</a>
+            <button class="gh-nav__toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="gh-logo gh-logo--desktop">GAMEHUB ACADEMY</a>
             <nav class="gh-nav gh-nav--desktop">
                 <ul class="gh-nav__list">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="aprendizado.html" class="gh-nav__active-link">Aprendizado</a></li>
-                    <li><a href="jogos.html">Nossos Jogos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                    <li><a href="aprendizado.html" class="gh-nav__active-link">Trilhas de Aprendizado</a></li>
+                    <li><a href="jogos.html">Vitrine de Jogos</a></li>
+                    <li><a href="equipe.html">Mentores & Comunidade</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <aside class="gh-sidebar" id="gh-sidebar">
-        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
-            <i class="fas fa-times"></i>
-        </button>
+        <div class="gh-sidebar__header">
+            <a href="index.html" class="gh-logo gh-logo--mobile"><i class="fas fa-gamepad"></i> GameHub</a>
+            <button class="gh-sidebar__close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+        </div>
         <ul class="gh-sidebar__list">
-            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
             <li><a href="index.html" class="gh-sidebar__link"><i class="fas fa-home"></i> Início</a></li>
-            <li><a href="aprendizado.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
-            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
-            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-graduation-cap"></i> Trilhas</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-gamepad"></i> Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Comunidade</a></li>
             <li><a href="sobre.html" class="gh-sidebar__link"><i class="fas fa-info-circle"></i> Sobre</a></li>
-            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+            <li class="gh-sidebar__cta">
+                <a href="#" target="_blank" class="gh-button gh-button--discord gh-button--full"><i class="fab fa-discord"></i> Servidor Discord</a>
+                <a href="#" target="_blank" class="gh-button gh-button--youtube gh-button--full" style="margin-top: 10px;"><i class="fab fa-youtube"></i> Canal YouTube</a>
+            </li>
         </ul>
     </aside>
     <div class="gh-overlay" id="gh-overlay"></div>
@@ -57,82 +49,119 @@
     <main class="gh-main-content">
         
         <section class="gh-section gh-section--light">
-            <h1 class="gh-heading">Academia Dev: A Rota Completa da GameDev</h1>
-            <p class="gh-section__intro">Ensinamos as 9 disciplinas essenciais para desenvolver, prototipar e lançar seu próprio título. Clique em qualquer área e use o Acordeão para ver o conteúdo programático detalhado!</p>
+            <h1 class="gh-heading">As 9 Disciplinas Essenciais da GameDev</h1>
+            <p class="gh-section__intro">Desenvolver jogos é um esforço multidisciplinar. Na GameHub, não formamos apenas programadores; formamos criadores completos. Nossa grade curricular cobre todas as áreas necessárias para tirar um jogo do papel. Explore os cards abaixo e use o acordeão para ver detalhes profundos de cada módulo.</p>
         </section>
 
-        <section class="gh-section" style="padding-top: 0; padding-bottom: 20px;">
-            <div class="gh-banner" style="background-color: var(--color-dark-bg); border: 2px solid var(--color-primary); height: 120px; align-items: center; justify-content: center; text-align: center; padding: 0 40px;">
-                <div style="max-width: 800px; padding: 0;">
-                    <p style="font-size: 1.2rem; color: var(--color-text-vibrant); font-weight: 500;"><i class="fas fa-chalkboard-teacher" style="color: var(--color-accent); margin-right: 15px;"></i> **Nova Turma:** As aulas de Scripting (Módulo I) começam dia 20 de Janeiro. Não perca!</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="gh-section" style="padding-top: 20px;">
-            <div class="gh-card-grid gh-card-grid--3-cols gh-area-grid">
+        <section class="gh-section" style="padding-top: 40px;">
+            <div class="gh-card-grid gh-card-grid--3-cols">
                 
-                <div class="gh-topic-card" id="scripting">
-                    <i class="fas fa-code gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">1. Scripting (C#)</h3>
-                    <p>Domine a lógica para criar mecânicas de jogo, IA e sistemas de inventário em Unity.</p>
-                    <div class="gh-tags"><span class="gh-tag">C# Unity</span> <span class="gh-tag">IA</span> <span class="gh-tag">Algoritmos</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-code gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar de Engenharia</span>
+                            <h3 class="gh-topic-card__title">Scripting & Lógica</h3>
+                        </div>
+                    </div>
+                    <p>O cérebro do seu jogo. Aprenda a dar vida às suas ideias, controlando personagens, físicas e sistemas complexos através de código limpo e eficiente.</p>
+                    <div><span class="gh-tag">C# Unity</span> <span class="gh-tag">C++ Unreal</span> <span class="gh-tag">Algoritmos</span></div>
                 </div>
 
-                <div class="gh-topic-card" id="modelagem">
-                    <i class="fas fa-cube gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">2. Modelagem 3D</h3>
-                    <p>Curso completo de Blender para criação de ambientes e personagens Low-Poly.</p>
-                    <div class="gh-tags"><span class="gh-tag">Blender</span> <span class="gh-tag">Low-Poly</span> <span class="gh-tag">Assets</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-cube gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar Visual</span>
+                            <h3 class="gh-topic-card__title">Modelagem 3D</h3>
+                        </div>
+                    </div>
+                    <p>Esculpa mundos e personagens. Do low-poly estilizado ao fotorrealismo, domine a criação de assets digitais prontos para engines.</p>
+                    <div><span class="gh-tag">Blender</span> <span class="gh-tag">ZBrush</span> <span class="gh-tag">Texturização PBR</span></div>
                 </div>
 
-                <div class="gh-topic-card" id="animacao">
-                    <i class="fas fa-running gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">3. Animação & Rigging</h3>
-                    <p>Crie movimentos realistas para personagens usando Rigging, Cinemática e Keyframes.</p>
-                    <div class="gh-tags"><span class="gh-tag">Rigging</span> <span class="gh-tag">Keyframes</span> <span class="gh-tag">Cinemática</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-running gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar Visual</span>
+                            <h3 class="gh-topic-card__title">Animação & Rigging</h3>
+                        </div>
+                    </div>
+                    <p>Dê alma aos seus modelos. Aprenda os 12 princípios da animação para criar movimentos fluidos, expressivos e mecânicas de combate impactantes.</p>
+                    <div><span class="gh-tag">Rigging</span> <span class="gh-tag">Keyframes</span> <span class="gh-tag">Cinemática</span></div>
                 </div>
                 
-                <div class="gh-topic-card" id="pixelart">
-                    <i class="fas fa-th gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">4. Pixel Art</h3>
-                    <p>Especialização em arte 2D de baixa resolução. Criação de spritesheets e tilesets.</p>
-                    <div class="gh-tags"><span class="gh-tag">Aseprite</span> <span class="gh-tag">Sprites</span> <span class="gh-tag">Paleta</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-th gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Especialização 2D</span>
+                            <h3 class="gh-topic-card__title">Pixel Art & Sprites</h3>
+                        </div>
+                    </div>
+                    <p>A arte atemporal dos jogos retrô. Domine a criação de spritesheets, tilesets e paletas de cores limitadas para um visual indie autêntico.</p>
+                    <div><span class="gh-tag">Aseprite</span> <span class="gh-tag">Animação 2D</span> <span class="gh-tag">Tilemaps</span></div>
                 </div>
                 
-                <div class="gh-topic-card" id="gfx">
-                    <i class="fas fa-palette gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">5. Design GFX & Texturas</h3>
-                    <p>Iluminação, Shaders e criação de texturas PBR. Dê um visual profissional ao seu jogo.</p>
-                    <div class="gh-tags"><span class="gh-tag">PBR</span> <span class="gh-tag">Shaders</span> <span class="gh-tag">Iluminação</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-wand-magic-sparkles gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Ponte Arte-Engenharia</span>
+                            <h3 class="gh-topic-card__title">VFX & Technical Art</h3>
+                        </div>
+                    </div>
+                    <p>Onde a arte encontra a matemática. Crie efeitos visuais deslumbrantes, partículas, shaders complexos e otimize o desempenho gráfico do jogo.</p>
+                    <div><span class="gh-tag">Shader Graph</span> <span class="gh-tag">Partículas (VFX)</span> <span class="gh-tag">Otimização</span></div>
                 </div>
                 
-                <div class="gh-topic-card" id="sfx">
-                    <i class="fas fa-volume-up gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">6. Sound Design (SFX)</h3>
-                    <p>Criação e mixagem de efeitos sonoros (SFX) e composição de trilhas originais (BGM).</p>
-                    <div class="gh-tags"><span class="gh-tag">Mixagem</span> <span class="gh-tag">Foley</span> <span class="gh-tag">Composição</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-headphones-simple gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar de Imersão</span>
+                            <h3 class="gh-topic-card__title">Sound Design (SFX & BGM)</h3>
+                        </div>
+                    </div>
+                    <p>A metade invisível da experiência. Componha trilhas sonoras emocionantes e desenhe efeitos sonoros (SFX) que dão peso e feedback às ações do jogador.</p>
+                    <div><span class="gh-tag">FMOD/Wwise</span> <span class="gh-tag">Composição</span> <span class="gh-tag">Foley</span></div>
                 </div>
                 
-                <div class="gh-topic-card" id="hud">
-                    <i class="fas fa-desktop gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">7. HUD Maker (UI/UX)</h3>
-                    <p>Design de Interfaces (Menus e Botões) focado em Usabilidade para a melhor experiência do jogador.</p>
-                    <div class="gh-tags"><span class="gh-tag">UI/UX</span> <span class="gh-tag">Figma</span> <span class="gh-tag">Menus</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-layer-group gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar de Interface</span>
+                            <h3 class="gh-topic-card__title">UI/UX Design</h3>
+                        </div>
+                    </div>
+                    <p>A comunicação entre o jogador e o jogo. Projete HUDs, menus e interfaces que sejam intuitivos, acessíveis e visualmente coesos com a direção de arte.</p>
+                    <div><span class="gh-tag">Figma</span> <span class="gh-tag">Usabilidade</span> <span class="gh-tag">Design System</span></div>
                 </div>
 
-                <div class="gh-topic-card" id="roteiro">
-                    <i class="fas fa-feather-alt gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">8. Roteiro e Narrativa</h3>
-                    <p>Técnicas de escrita para jogos, desenvolvimento de Lores profundos e diálogos memoráveis.</p>
-                    <div class="gh-tags"><span class="gh-tag">Lore</span> <span class="gh-tag">Diálogos</span> <span class="gh-tag">Não-Linear</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-book-open gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar de Design</span>
+                            <h3 class="gh-topic-card__title">Narrativa & Roteiro</h3>
+                        </div>
+                    </div>
+                    <p>Histórias que só podem ser contadas jogando. Aprenda a escrever diálogos, criar 'lores' profundos e estruturar narrativas não-lineares e interativas.</p>
+                    <div><span class="gh-tag">Worldbuilding</span> <span class="gh-tag">Diálogos Ramificados</span> <span class="gh-tag">Twine</span></div>
                 </div>
                 
-                <div class="gh-topic-card" id="level-design">
-                    <i class="fas fa-map-marked-alt gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">9. Level Design</h3>
-                    <p>Criação de níveis (mapas, fases) que guiam o jogador, balanceiam o desafio e incentivam a exploração.</p>
-                    <div class="gh-tags"><span class="gh-tag">Fluxo</span> <span class="gh-tag">Pace</span> <span class="gh-tag">World Building</span></div>
+                <div class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-map gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role">Pilar Central</span>
+                            <h3 class="gh-topic-card__title">Game & Level Design</h3>
+                        </div>
+                    </div>
+                    <p>O arquiteto da diversão. Defina as regras, mecânicas e balanceamento do jogo, e construa fases que ensinam, desafiam e recompensam o jogador.</p>
+                    <div><span class="gh-tag">Mecânicas</span> <span class="gh-tag">Pacing</span> <span class="gh-tag">Prototipagem</span></div>
                 </div>
 
             </div>
@@ -140,31 +169,124 @@
         </section>
 
         <section class="gh-section gh-section--light">
-            <h2 class="gh-heading gh-heading--secondary">📖 Conteúdo Programático Destaque</h2>
-            <p class="gh-section__intro">Expanda um tópico para ver as principais ferramentas e módulos do curso.</p>
+            <h2 class="gh-heading gh-heading--secondary">📖 Ementa Detalhada dos Módulos</h2>
+            <p class="gh-section__intro">Abaixo, detalhamos o que você realmente aprende em nossas principais trilhas. Clique nos títulos para expandir o conteúdo programático e entender a profundidade do nosso ensino.</p>
             
             <div class="gh-accordion">
                 
                 <div class="gh-accordion__item">
                     <div class="gh-accordion__header" onclick="toggleAccordion(this)">
-                        Módulo Scripting C#: O caminho da Lógica à Funcionalidade
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-code"></i> &nbsp; Trilha de Programação: Unity & C# Avançado
+                        <i class="fas fa-chevron-down ms-auto"></i>
                     </div>
                     <div class="gh-accordion__content">
-                        <p>Cobrimos: Lógica Booleana, Estruturas de Dados, Classes e Objetos (OOP), Componentes Essenciais da Unity (Rigidbody, Collider), Sistemas de Invetário e Criação de IA (Pathfinding simples).</p>
+                        <div class="gh-accordion__body">
+                            <p>Esta trilha leva você da lógica básica à arquitetura de sistemas complexos. Não ensinamos apenas a "copiar código", mas a pensar como um engenheiro de software focado em jogos.</p>
+                            <h4>Fase 1: Fundamentos da Lógica (Sem Engine)</h4>
+                            <ul>
+                                <li>Variáveis, Tipos de Dados e Operadores.</li>
+                                <li>Estruturas de Controle (if, switch, loops for/while).</li>
+                                <li>Funções, Métodos e Escopo.</li>
+                                <li>Introdução à Programação Orientada a Objetos (Classes, Herança, Polimorfismo).</li>
+                            </ul>
+                            <h4>Fase 2: Unity Essentials</h4>
+                            <ul>
+                                <li>Entendendo a arquitetura Component-Based (MonoBehaviour).</li>
+                                <li>Manipulação de Transform, Input System (antigo e novo).</li>
+                                <li>Física Básica: Rigidbody, Colliders, Triggers e Raycasting.</li>
+                                <li>Prefabs e Instanciação dinâmica de objetos.</li>
+                            </ul>
+                            <h4>Fase 3: Sistemas Intermediários</h4>
+                            <ul>
+                                <li>Criação de UI interativa com Canvas e TextMeshPro.</li>
+                                <li>Gerenciamento de Cenas e Persistência de Dados (PlayerPrefs, JSON).</li>
+                                <li>Animação via código (Tweens) e Animator Controller.</li>
+                                <li>Sistemas de Áudio Dinâmico.</li>
+                            </ul>
+                            <h4>Fase 4: Arquitetura e Padrões (Avançado)</h4>
+                            <ul>
+                                <li>Design Patterns comuns em jogos (Singleton, Observer, State Machine, Object Pool).</li>
+                                <li>ScriptableObjects para arquitetura baseada em dados.</li>
+                                <li>Introdução à IA: Máquinas de Estado Finito (FSM) e Pathfinding (NavMesh).</li>
+                                <li>Otimização de código e Profiling básico.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="gh-accordion__item">
                     <div class="gh-accordion__header" onclick="toggleAccordion(this)">
-                        Módulo Modelagem 3D: Blender e otimização para Games
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-cube"></i> &nbsp; Trilha de Arte 3D: Blender para Game Assets
+                        <i class="fas fa-chevron-down ms-auto"></i>
                     </div>
                     <div class="gh-accordion__content">
-                        <p>Focamos em: Escultura Básica, Retopologia, Mapeamento UV, Criação de Texturas PBR e exportação correta de FBX/OBJ com pivots alinhados para as Engines Unity/Unreal.</p>
+                        <div class="gh-accordion__body">
+                            <p>Focada na criação de assets otimizados para rodar em tempo real dentro de engines como Unity e Unreal. Aprenda o pipeline completo da indústria.</p>
+                            <h4>Módulo 1: Modelagem Hard Surface (Objetos/Cenários)</h4>
+                            <ul>
+                                <li>Navegação e interface do Blender.</li>
+                                <li>Técnicas de modelagem poligonal (Extrude, Bevel, Loop Cuts).</li>
+                                <li>Modificadores essenciais (Mirror, Subdivision, Boolean).</li>
+                                <li>Criação de props (caixas, barris, armas simples) focando em boa topologia.</li>
+                            </ul>
+                            <h4>Módulo 2: Mapeamento UV e Texturização</h4>
+                            <ul>
+                                <li>Abertura de malha (UV Unwrapping) eficiente para jogos.</li>
+                                <li>Conceito de Texel Density.</li>
+                                <li>Introdução ao Texture Painting no Blender.</li>
+                                <li>Workflow PBR (Physically Based Rendering): entendendo mapas de Albedo, Metallic, Roughness e Normal.</li>
+                            </ul>
+                            <h4>Módulo 3: Introdução a Personagens e Escultura</h4>
+                            <ul>
+                                <li>Blocking e proporções humanas.</li>
+                                <li>Ferramentas de escultura digital (Sculpt Mode).</li>
+                                <li>Conceito de High-Poly vs Low-Poly.</li>
+                                <li>Baking de Normal Maps (transferindo detalhes do high para o low poly).</li>
+                            </ul>
+                            <h4>Módulo 4: Pipeline de Exportação para Engine</h4>
+                            <ul>
+                                <li>Pivots, escalas e unidades corretas (Metros).</li>
+                                <li>Formatos de arquivo (FBX, OBJ, GLTF).</li>
+                                <li>Configuração de materiais na Unity/Unreal.</li>
+                                <li>LODs (Level of Detail) básicos.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
+                 <div class="gh-accordion__item">
+                    <div class="gh-accordion__header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-map"></i> &nbsp; Trilha de Design: Level Design e Fluxo
+                        <i class="fas fa-chevron-down ms-auto"></i>
+                    </div>
+                    <div class="gh-accordion__content">
+                        <div class="gh-accordion__body">
+                            <p>Mais do que decorar cenários, o Level Design é sobre guiar a experiência do jogador. Aprenda a criar fases que ensinam mecânicas e desafiam na medida certa.</p>
+                            <h4>Conceitos Fundamentais</h4>
+                            <ul>
+                                <li>O papel do Level Designer vs. Environment Artist.</li>
+                                <li>Teoria do Fluxo (Flow Channel) de Csikszentmihalyi aplicada a jogos.</li>
+                                <li>Pacing: controlando o ritmo de tensão e relaxamento.</li>
+                                <li>Guia visual e affordances: como o cenário "fala" com o jogador.</li>
+                            </ul>
+                            <h4>Processo de Criação</h4>
+                            <ul>
+                                <li>Conceituação e referências.</li>
+                                <li>Layout 2D (Top-down maps) e diagramas de fluxo.</li>
+                                <li>Blockout/Whiteboxing na engine (testando escala e métricas de gameplay).</li>
+                                <li>Iteração baseada em playtests.</li>
+                            </ul>
+                            <h4>Técnicas Específicas</h4>
+                            <ul>
+                                <li>Design de encontros de combate.</li>
+                                <li>Puzzle design e gating (bloqueios e chaves).</li>
+                                <li>Narrativa ambiental: contando histórias através do cenário.</li>
+                                <li>Iluminação como ferramenta de gameplay e guia.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
         </section>
@@ -172,9 +294,30 @@
     </main>
 
     <footer class="gh-footer">
-        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
-        <div class="gh-footer__links">
-            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        <div class="gh-footer__content">
+            <div class="gh-footer__col">
+                <h4>GameHub Academy</h4>
+                <p>A maior comunidade open-source de desenvolvimento de jogos. Criando criadores desde 2023.</p>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="aprendizado.html">Trilhas de Estudo</a></li>
+                    <li><a href="jogos.html">Jogos da Comunidade</a></li>
+                    <li><a href="equipe.html">Nossos Mentores</a></li>
+                </ul>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Conecte-se</h4>
+                <ul>
+                    <li><a href="#" target="_blank"><i class="fab fa-discord"></i> Discord Oficial</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter / X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gh-footer__bottom">
+            <p>&copy; 2025 GameHub Academy. Todos os direitos reservados. Feito com <i class="fas fa-heart" style="color: var(--color-primary);"></i> pela comunidade.</p>
         </div>
     </footer>
 

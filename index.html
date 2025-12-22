@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub | Inicial</title>
+    <title>GameHub | O Ponto de Partida do Seu Jogo</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
@@ -17,39 +17,50 @@
                 <i class="fas fa-gamepad"></i> GameHub
             </a>
             
-            <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
+            <button class="gh-nav__toggle" aria-label="Abrir menu">
                 <i class="fas fa-bars"></i>
             </button>
             
             <a href="index.html" class="gh-logo gh-logo--desktop">
-                <i class="fas fa-gamepad"></i> GameHub
+                GAMEHUB ACADEMY
             </a>
             
             <nav class="gh-nav gh-nav--desktop">
                 <ul class="gh-nav__list">
                     <li><a href="index.html" class="gh-nav__active-link">Início</a></li>
-                    <li><a href="aprendizado.html">Aprendizado</a></li>
-                    <li><a href="jogos.html">Nossos Jogos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                    <li><a href="aprendizado.html">Trilhas de Aprendizado</a></li>
+                    <li><a href="jogos.html">Vitrine de Jogos</a></li>
+                    <li><a href="equipe.html">Mentores & Comunidade</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <aside class="gh-sidebar" id="gh-sidebar">
-        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
-            <i class="fas fa-times"></i>
-        </button>
+        <div class="gh-sidebar__header">
+            <a href="index.html" class="gh-logo gh-logo--mobile">
+                <i class="fas fa-gamepad"></i> GameHub
+            </a>
+            <button class="gh-sidebar__close" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
         <ul class="gh-sidebar__list">
-            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
             <li><a href="index.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-home"></i> Início</a></li>
-            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
-            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
-            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Trilhas</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-gamepad"></i> Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link"><i class="fas fa-users"></i> Comunidade</a></li>
             <li><a href="sobre.html" class="gh-sidebar__link"><i class="fas fa-info-circle"></i> Sobre</a></li>
-            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+            
+            <li class="gh-sidebar__cta">
+                <a href="#" target="_blank" class="gh-button gh-button--discord gh-button--full">
+                    <i class="fab fa-discord"></i> Servidor Discord
+                </a>
+                <a href="#" target="_blank" class="gh-button gh-button--youtube gh-button--full" style="margin-top: 10px;">
+                    <i class="fab fa-youtube"></i> Canal YouTube
+                </a>
+            </li>
         </ul>
     </aside>
     <div class="gh-overlay" id="gh-overlay"></div>
@@ -58,108 +69,139 @@
         
         <section class="gh-hero">
             <div class="gh-hero__content">
-                <h1 class="gh-hero__title">GameHub: Crie o Próximo Grande Jogo.</h1>
-                <p class="gh-hero__subtitle">Do primeiro Script à publicação na Steam, mergulhe no ecossistema completo de criação de jogos. Seja um Dev na nossa comunidade.</p>
-                <a href="aprendizado.html" class="gh-button gh-button--primary gh-button--large">Começar a Aprender Agora!</a>
-                <a href="jogos.html" class="gh-button gh-button--accent gh-button--large" style="margin-left: 20px;">Ver Jogos Lançados</a>
-            </div>
-        </section>
-
-        <section class="gh-section" style="padding-bottom: 20px;">
-            <div class="gh-banner" style="background-image: url('placeholder-game-banner.jpg'); background-color: #2e2e4a;">
-                <div class="gh-banner__content">
-                    <h2 class="gh-banner__title"><i class="fas fa-star"></i> DESTAQUE DA SEMANA: "Echoes of the Void 2"</h2>
-                    <p class="gh-banner__subtitle">O Projeto Colaborativo 3D atingiu a fase de Alpha. Junte-se à equipe de testes e ajude a refinar o combate tático! </p>
-                    <a href="jogos.html#void2" class="gh-button gh-button--accent">Ver Progresso</a>
+                <h1 class="gh-hero__title">Transforme sua Paixão por Jogos em <span class="gh-text-gradient">Realidade Digital</span>.</h1>
+                <p class="gh-hero__subtitle">Bem-vindo à GameHub Academy. Somos mais que uma comunidade; somos uma incubadora de talentos. Do conceito inicial à publicação na Steam, oferecemos o roteiro, as ferramentas e a mentoria gratuita para você criar o próximo grande sucesso indie.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="aprendizado.html" class="gh-button gh-button--primary gh-button--large">
+                        <i class="fas fa-rocket"></i> Começar Minha Jornada
+                    </a>
+                    <a href="jogos.html" class="gh-button gh-button--secondary gh-button--large">
+                        <i class="fas fa-play"></i> Ver Projetos dos Alunos
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="gh-section">
-            <h2 class="gh-heading">🕹️ Lançamentos da Comunidade</h2>
-            <p class="gh-section__intro">Títulos recentes criados integralmente pelos membros da nossa Academia Dev, prontos para download.</p>
+        <section class="gh-section" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="gh-banner" style="background-image: url('https://placehold.co/1200x400/1F1F35/FFFFFF/png?text=Banner+Jogo+Destaque');">
+                <div class="gh-banner__content">
+                    <span class="gh-banner__badge">Projeto em Destaque</span>
+                    <h2 class="gh-banner__title">"Neon Protocol": O Hack 'n' Slash Cyberpunk Criado na GameHub</h2>
+                    <p class="gh-banner__subtitle">Desenvolvido por uma equipe de 5 estudantes durante 4 meses, este projeto Action-RPG 3D acaba de entrar em fase beta aberta. Participe dos testes e veja o que nossa comunidade é capaz de criar!</p>
+                    <a href="jogos.html#neon" class="gh-button gh-button--accent">
+                        <i class="fas fa-gamepad"></i> Jogar o Beta
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gh-section gh-section--light">
+            <h2 class="gh-heading">🕹️ Vitrine da Comunidade</h2>
+            <p class="gh-section__intro">Estes não são apenas exercícios; são jogos completos e jogáveis. Explore os títulos mais recentes desenvolvidos inteiramente pelos membros da nossa comunidade, cobrindo diversos gêneros e engines.</p>
             
             <div class="gh-card-grid gh-card-grid--3-cols">
                 
                 <article class="gh-game-card">
-                    <div class="gh-game-card__media" style="background-color: #3b3b55;"></div>
+                    <div class="gh-game-card__media" style="background-image: url('https://placehold.co/400x250/2a2a40/FFFFFF/png?text=Echoes+Image');"></div>
                     <div class="gh-game-card__body">
+                        <div class="gh-tags">
+                            <span class="gh-tag">RPG Tático</span><span class="gh-tag">Unity 3D</span>
+                        </div>
                         <h3 class="gh-game-card__title">Echoes of the Void</h3>
-                        <p class="gh-game-card__description">Um RPG de ação com combate tático, IA complexa e uma trilha sonora imersiva.</p>
-                        <div class="gh-tags">
-                            <span class="gh-tag">RPG</span>
-                            <span class="gh-tag">Unity</span>
-                            <span class="gh-tag">C#</span>
+                        <p class="gh-game-card__description">Um RPG tático profundo onde cada escolha narrativa afeta o mundo e o combate. Destaque para o sistema de IA complexo dos inimigos e a trilha sonora orquestral original.</p>
+                        <div class="gh-game-card__footer">
+                            <a href="jogos.html#echoes" class="gh-button gh-button--primary gh-button--small gh-button--full">Ver Detalhes</a>
                         </div>
-                        <a href="jogos.html#echoes" class="gh-button gh-button--small gh-button--primary">Jogar Agora</a>
                     </div>
                 </article>
 
                 <article class="gh-game-card">
-                    <div class="gh-game-card__media" style="background-color: #3b3b55;"></div>
+                    <div class="gh-game-card__media" style="background-image: url('https://placehold.co/400x250/3a2a2a/FFFFFF/png?text=Dungeon+Image');"></div>
                     <div class="gh-game-card__body">
-                        <h3 class="gh-game-card__title">Pixel Dungeon 98</h3>
-                        <p class="gh-game-card__description">Clássico estilo Roguelike, com arte em 16-bits e desafios gerados proceduralmente.</p>
                         <div class="gh-tags">
-                            <span class="gh-tag">Pixel Art</span>
-                            <span class="gh-tag">2D</span>
-                            <span class="gh-tag">Ação</span>
+                            <span class="gh-tag">Roguelike</span><span class="gh-tag">Pixel Art</span>
                         </div>
-                        <a href="jogos.html#dungeon" class="gh-button gh-button--small gh-button--primary">Jogar Agora</a>
+                        <h3 class="gh-game-card__title">Bit-Dungeon '98</h3>
+                        <p class="gh-game-card__description">Uma homenagem aos clássicos de 16-bits. Este roguelike procedural apresenta arte desenhada à mão, morte permanente e centenas de itens únicos para descobrir.</p>
+                        <div class="gh-game-card__footer">
+                            <a href="jogos.html#dungeon" class="gh-button gh-button--primary gh-button--small gh-button--full">Ver Detalhes</a>
+                        </div>
                     </div>
                 </article>
 
                 <article class="gh-game-card">
-                    <div class="gh-game-card__media" style="background-color: #3b3b55;"></div>
+                    <div class="gh-game-card__media" style="background-image: url('https://placehold.co/400x250/2a3a2a/FFFFFF/png?text=Cyber+Image');"></div>
                     <div class="gh-game-card__body">
-                        <h3 class="gh-game-card__title">Code Runner</h3>
-                        <p class="gh-game-card__description">Plataforma desafiadora onde a física e os puzzles baseados em código se encontram. Ótimo para iniciantes.</p>
                         <div class="gh-tags">
-                            <span class="gh-tag">Plataforma</span>
-                            <span class="gh-tag">Puzzles</span>
-                            <span class="gh-tag">JS</span>
+                            <span class="gh-tag">Plataforma</span><span class="gh-tag">Phaser JS</span>
                         </div>
-                        <a href="jogos.html#code" class="gh-button gh-button--small gh-button--primary">Jogar Agora</a>
+                        <h3 class="gh-game-card__title">Cyber-Leap</h3>
+                        <p class="gh-game-card__description">Um jogo de plataforma de precisão extremamente desafiador, focado em mecânicas de "dash" e controle aéreo. Perfeito para speedrunners.</p>
+                        <div class="gh-game-card__footer">
+                            <a href="jogos.html#cyber" class="gh-button gh-button--primary gh-button--small gh-button--full">Ver Detalhes</a>
+                        </div>
                     </div>
                 </article>
 
             </div>
-            <div class="gh-center-content"><a href="jogos.html" class="gh-link-more">Ver todos os 15 títulos da GameHub →</a></div>
+            <div class="gh-center-content" style="margin-top: 50px;">
+                <a href="jogos.html" class="gh-button gh-button--secondary">
+                    <i class="fas fa-th"></i> Explorar o Portfólio Completo (15+ Jogos)
+                </a>
+            </div>
         </section>
         
-        <section class="gh-section gh-section--light">
-            <h2 class="gh-heading gh-heading--secondary">❓ Perguntas Frequentes</h2>
-            <p class="gh-section__intro">Dúvidas rápidas sobre nossa metodologia, cursos e comunidade.</p>
+        <section class="gh-section">
+            <h2 class="gh-heading gh-heading--secondary">❓ Dúvidas Frequentes</h2>
+            <p class="gh-section__intro">Entenda como funciona nossa comunidade e como você pode começar a criar hoje mesmo.</p>
             
             <div class="gh-accordion">
                 
                 <div class="gh-accordion__item">
                     <div class="gh-accordion__header" onclick="toggleAccordion(this)">
-                        O aprendizado é totalmente gratuito?
+                        O aprendizado na GameHub é realmente gratuito?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="gh-accordion__content">
-                        <p>Sim! Todas as aulas e mentorias ao vivo são gratuitas e ocorrem no nosso servidor Discord. Nosso objetivo é fomentar o desenvolvimento, não vender cursos. Os recursos premium, como assets exclusivos, são opcionais.</p>
+                        <div class="gh-accordion__body">
+                            <p>Sim, absolutamente! Nossa missão é democratizar o desenvolvimento de jogos. O acesso a todas as trilhas de aprendizado, materiais didáticos básicos, participação na comunidade do Discord e a maioria das mentorias em grupo são 100% gratuitos. Nós nos sustentamos através de doações opcionais e parcerias com estúdios, não cobrando dos alunos.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="gh-accordion__item">
                     <div class="gh-accordion__header" onclick="toggleAccordion(this)">
-                        Preciso ter experiência prévia em programação ou arte?
+                        Eu não sei programar nem desenhar. Posso participar?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="gh-accordion__content">
-                        <p>Não é necessário! Nossos cursos (Academia Dev) começam do absoluto zero, cobrindo lógica de programação básica (C# e JS) e fundamentos de arte 2D e 3D. Basta ter vontade de aprender e um computador.</p>
+                        <div class="gh-accordion__body">
+                            <p>Com certeza! A GameHub foi desenhada para iniciantes absolutos. Nossas trilhas "Fundamentos" começam do zero: ensinamos lógica de programação antes de entrar em engines, e princípios básicos de design antes de abrir softwares 3D. Temos muitos membros que começaram sem conhecimento algum e hoje estão lançando seus próprios jogos. Sua vontade de aprender é o único pré-requisito.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="gh-accordion__item">
                     <div class="gh-accordion__header" onclick="toggleAccordion(this)">
-                        Qual Engine de Jogo a GameHub utiliza?
+                        Quais ferramentas e engines vocês utilizam?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="gh-accordion__content">
-                        <p>Principalmente Unity (para projetos 3D e C#) e Phaser (para projetos 2D e JavaScript). Acreditamos que dominar ambas as engines prepara o desenvolvedor para qualquer desafio no mercado.</p>
+                        <div class="gh-accordion__body">
+                            <p>Focamos nas ferramentas padrão da indústria para garantir sua empregabilidade. Nossas principais trilhas cobrem <strong>Unity (C#)</strong> para desenvolvimento 2D/3D robusto e <strong>Unreal Engine 5 (Blueprints/C++)</strong> para projetos de alta fidelidade visual. Para arte, ensinamos <strong>Blender</strong> (Modelagem 3D), <strong>Aseprite</strong> (Pixel Art) e <strong>Figma</strong> (UI/UX). Também temos oficinas de engines mais leves como Godot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gh-accordion__item">
+                    <div class="gh-accordion__header" onclick="toggleAccordion(this)">
+                        Como funcionam os projetos colaborativos?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="gh-accordion__content">
+                        <div class="gh-accordion__body">
+                            <p>Esta é a nossa atividade principal! A cada 3 meses, organizamos uma "Game Jam Estendida". Os membros formam equipes multidisciplinares (programadores, artistas, músicos, roteiristas) e têm um prazo para desenvolver um jogo completo com o apoio de nossos mentores. É a melhor forma de ganhar experiência real de estúdio e construir um portfólio sólido.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -170,9 +212,30 @@
     </main>
 
     <footer class="gh-footer">
-        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
-        <div class="gh-footer__links">
-            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        <div class="gh-footer__content">
+            <div class="gh-footer__col">
+                <h4>GameHub Academy</h4>
+                <p>A maior comunidade open-source de desenvolvimento de jogos. Criando criadores desde 2023.</p>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="aprendizado.html">Trilhas de Estudo</a></li>
+                    <li><a href="jogos.html">Jogos da Comunidade</a></li>
+                    <li><a href="equipe.html">Nossos Mentores</a></li>
+                </ul>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Conecte-se</h4>
+                <ul>
+                    <li><a href="#" target="_blank"><i class="fab fa-discord"></i> Discord Oficial</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter / X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gh-footer__bottom">
+            <p>&copy; 2025 GameHub Academy. Todos os direitos reservados. Feito com <i class="fas fa-heart" style="color: var(--color-primary);"></i> pela comunidade.</p>
         </div>
     </footer>
 

@@ -3,53 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub | Equipe</title>
+    <title>GameHub | Mentores e Comunidade</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
     <header class="gh-header">
         <div class="gh-header-container">
-            
-            <a href="index.html" class="gh-logo gh-logo--mobile">
-                <i class="fas fa-gamepad"></i> GameHub
-            </a>
-            
-            <button class="gh-nav__toggle" aria-label="Abrir menu" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <a href="index.html" class="gh-logo gh-logo--desktop">
-                <i class="fas fa-gamepad"></i> GameHub
-            </a>
-            
+            <a href="index.html" class="gh-logo gh-logo--mobile"><i class="fas fa-gamepad"></i> GameHub</a>
+            <button class="gh-nav__toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="gh-logo gh-logo--desktop">GAMEHUB ACADEMY</a>
             <nav class="gh-nav gh-nav--desktop">
                 <ul class="gh-nav__list">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="aprendizado.html">Aprendizado</a></li>
-                    <li><a href="jogos.html">Nossos Jogos</a></li>
-                    <li><a href="equipe.html" class="gh-nav__active-link">Equipe</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#" class="gh-button gh-button--small gh-button--accent" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                    <li><a href="aprendizado.html">Trilhas de Aprendizado</a></li>
+                    <li><a href="jogos.html">Vitrine de Jogos</a></li>
+                    <li><a href="equipe.html" class="gh-nav__active-link">Mentores & Comunidade</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <aside class="gh-sidebar" id="gh-sidebar">
-        <button class="gh-sidebar__close" aria-label="Fechar menu" onclick="toggleSidebar()">
-            <i class="fas fa-times"></i>
-        </button>
+        <div class="gh-sidebar__header">
+            <a href="index.html" class="gh-logo gh-logo--mobile"><i class="fas fa-gamepad"></i> GameHub</a>
+            <button class="gh-sidebar__close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+        </div>
         <ul class="gh-sidebar__list">
-            <li class="gh-sidebar__logo"><i class="fas fa-gamepad"></i> GameHub</li>
             <li><a href="index.html" class="gh-sidebar__link"><i class="fas fa-home"></i> Início</a></li>
-            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Aprendizado</a></li>
-            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-cube"></i> Nossos Jogos</a></li>
-            <li><a href="equipe.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-users"></i> Equipe</a></li>
+            <li><a href="aprendizado.html" class="gh-sidebar__link"><i class="fas fa-graduation-cap"></i> Trilhas</a></li>
+            <li><a href="jogos.html" class="gh-sidebar__link"><i class="fas fa-gamepad"></i> Jogos</a></li>
+            <li><a href="equipe.html" class="gh-sidebar__link gh-nav__active-link"><i class="fas fa-users"></i> Comunidade</a></li>
             <li><a href="sobre.html" class="gh-sidebar__link"><i class="fas fa-info-circle"></i> Sobre</a></li>
-            <li><a href="#" class="gh-button gh-button--full gh-button--primary gh-sidebar__cta" target="_blank"><i class="fab fa-discord"></i> Entrar no Discord</a></li>
+            <li class="gh-sidebar__cta">
+                <a href="#" target="_blank" class="gh-button gh-button--discord gh-button--full"><i class="fab fa-discord"></i> Servidor Discord</a>
+                <a href="#" target="_blank" class="gh-button gh-button--youtube gh-button--full" style="margin-top: 10px;"><i class="fab fa-youtube"></i> Canal YouTube</a>
+            </li>
         </ul>
     </aside>
     <div class="gh-overlay" id="gh-overlay"></div>
@@ -57,117 +49,136 @@
     <main class="gh-main-content">
         
         <section class="gh-section gh-section--light">
-            <h1 class="gh-heading">Nossa Equipe de Instrutores e Mentores</h1>
-            <p class="gh-section__intro">Conheça os profissionais que dedicam seu tempo para guiar a comunidade. Nossos instrutores são devs ativos no mercado.</p>
+            <h1 class="gh-heading">Quem Faz a GameHub Acontecer</h1>
+            <p class="gh-section__intro">A GameHub é movida por voluntários apaixonados. Nossos mentores são profissionais ativos na indústria de jogos (indie e AAA) que dedicam seu tempo livre para ensinar a próxima geração. Conheça os líderes de cada trilha.</p>
         </section>
         
         <section class="gh-section">
             <div class="gh-card-grid gh-card-grid--4-cols">
                 
                 <article class="gh-topic-card">
-                    <i class="fas fa-user-astronaut gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Alice 'Code' Silva</h3>
-                    <p style="color: var(--color-primary);">**Líder de Scripting (C#)**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Especialista em lógica de sistemas complexos e otimização de IA.</p>
-                    <div class="gh-tags"><span class="gh-tag">Scripting</span> <span class="gh-tag">C#</span> <span class="gh-tag">Mentora</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-code gh-topic-card__icon"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: var(--color-primary);">Lead Programmer</span>
+                            <h3 class="gh-topic-card__title">Alice 'CodeWitch' Silva</h3>
+                        </div>
+                    </div>
+                    <p>Engenheira de Software Sênior com 8 anos de experiência em Unity e C#. Especialista em arquitetura de sistemas escaláveis e inteligência artificial para jogos de estratégia.</p>
+                    <div><span class="gh-tag">Unity Lead</span> <span class="gh-tag">C#</span> <span class="gh-tag">Mentora IA</span></div>
+                    <a href="#" class="gh-link-more" style="color: var(--color-accent); margin-top: 15px; display: block;"><i class="fab fa-linkedin"></i> Ver Perfil Profissional</a>
                 </article>
 
                 <article class="gh-topic-card">
-                    <i class="fas fa-paint-brush gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Bruno 'Pixel' Rocha</h3>
-                    <p style="color: var(--color-primary);">**Instrutor de Pixel Art & 2D**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Com 10 anos de experiência em estúdios indie, ensina paletas e animação.</p>
-                    <div class="gh-tags"><span class="gh-tag">Pixel Art</span> <span class="gh-tag">2D</span> <span class="gh-tag">Arte</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-paint-brush gh-topic-card__icon" style="color: var(--color-secondary);"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: var(--color-secondary);">Lead 2D Artist</span>
+                            <h3 class="gh-topic-card__title">Bruno 'PixelRonin' Rocha</h3>
+                        </div>
+                    </div>
+                    <p>Artista freelancer focado em Pixel Art e animação frame-a-frame. Já trabalhou em 3 títulos indie lançados na Steam, cuidando da direção de arte e assets.</p>
+                    <div><span class="gh-tag">Pixel Art</span> <span class="gh-tag">Aseprite</span> <span class="gh-tag">Direção de Arte</span></div>
+                    <a href="#" class="gh-link-more" style="color: var(--color-accent); margin-top: 15px; display: block;"><i class="fab fa-artstation"></i> Ver Portfólio</a>
                 </article>
 
                 <article class="gh-topic-card">
-                    <i class="fas fa-bezier-curve gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Carla '3D' Mendes</h3>
-                    <p style="color: var(--color-primary);">**Especialista em Modelagem 3D**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Foco em Modelagem orgânica no Blender e preparação de assets para Engines.</p>
-                    <div class="gh-tags"><span class="gh-tag">Blender</span> <span class="gh-tag">3D</span> <span class="gh-tag">Unreal</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-cube gh-topic-card__icon" style="color: var(--color-accent);"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: var(--color-accent);">Lead 3D Generalist</span>
+                            <h3 class="gh-topic-card__title">Carla 'PolyQueen' Mendes</h3>
+                        </div>
+                    </div>
+                    <p>Generalista 3D focada em Blender para produção de assets de jogo. Especialista em modelagem hard-surface, retopologia otimizada e texturização PBR estilizada.</p>
+                    <div><span class="gh-tag">Blender</span> <span class="gh-tag">Modelagem 3D</span> <span class="gh-tag">Textura PBR</span></div>
+                    <a href="#" class="gh-link-more" style="color: var(--color-accent); margin-top: 15px; display: block;"><i class="fab fa-artstation"></i> Ver Portfólio</a>
                 </article>
 
                 <article class="gh-topic-card">
-                    <i class="fas fa-video gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Daniel 'Narrative' Souza</h3>
-                    <p style="color: var(--color-primary);">**Roteirista e Diretor**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Especializado em arcos narrativos não-lineares e construção de Lore.</p>
-                    <div class="gh-tags"><span class="gh-tag">Roteiro</span> <span class="gh-tag">Narrativa</span> <span class="gh-tag">Direção</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-map-signs gh-topic-card__icon" style="color: #FF5722;"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: #FF5722;">Lead Game Designer</span>
+                            <h3 class="gh-topic-card__title">Gustavo 'LevelUp' Lima</h3>
+                        </div>
+                    </div>
+                    <p>Game e Level Designer com foco em jogos de plataforma e ação. Ensina sobre balanceamento de mecânicas, ritmo de jogo (pacing) e design de tutoriais invisíveis.</p>
+                    <div><span class="gh-tag">Game Design</span> <span class="gh-tag">Level Design</span> <span class="gh-tag">Prototipagem</span></div>
+                    <a href="#" class="gh-link-more" style="color: var(--color-accent); margin-top: 15px; display: block;"><i class="fab fa-itch-io"></i> Ver Jogos</a>
                 </article>
-                
-                <article class="gh-topic-card">
-                    <i class="fas fa-headphones gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Eva 'Sound' Oliveira</h3>
-                    <p style="color: var(--color-primary);">**Sound Designer (SFX)**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Compositora e editora de áudio. Ensinando mixagem e a arte de criar Foley.</p>
-                    <div class="gh-tags"><span class="gh-tag">SFX</span> <span class="gh-tag">Composição</span> <span class="gh-tag">Áudio 3D</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+
+                 <article class="gh-topic-card">
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-music gh-topic-card__icon" style="color: #03A9F4;"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: #03A9F4;">Lead Audio</span>
+                            <h3 class="gh-topic-card__title">Eva 'Soundwave' Oliveira</h3>
+                        </div>
+                    </div>
+                    <p>Compositora e Sound Designer. Especialista em criar atmosferas imersivas através de áudio dinâmico e implementação de middleware (FMOD/Wwise) em engines.</p>
+                    <div><span class="gh-tag">SFX & BGM</span> <span class="gh-tag">Áudio Dinâmico</span> <span class="gh-tag">FMOD</span></div>
+                    <a href="#" class="gh-link-more" style="color: var(--color-accent); margin-top: 15px; display: block;"><i class="fab fa-soundcloud"></i> Ouvir Reels</a>
                 </article>
 
                 <article class="gh-topic-card">
-                    <i class="fas fa-drafting-compass gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Fábio 'UI/UX' Gomes</h3>
-                    <p style="color: var(--color-primary);">**Mentor de HUD Maker**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Focado em design de interface e usabilidade. Transforma dados complexos em HUDs intuitivos.</p>
-                    <div class="gh-tags"><span class="gh-tag">HUD</span> <span class="gh-tag">UI/UX</span> <span class="gh-tag">Figma</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
-                </article>
-                
-                <article class="gh-topic-card">
-                    <i class="fas fa-lightbulb gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Gustavo 'Level' Lima</h3>
-                    <p style="color: var(--color-primary);">**Especialista em Level Design**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Criação de níveis com foco em ritmo (Pace) e na Teoria de Fluxo para engajamento.</p>
-                    <div class="gh-tags"><span class="gh-tag">Level Design</span> <span class="gh-tag">Pace</span> <span class="gh-tag">World Building</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
-                </article>
-                
-                <article class="gh-topic-card">
-                    <i class="fas fa-globe gh-topic-card__icon"></i>
-                    <h3 class="gh-topic-card__title">Helena 'Community' Paz</h3>
-                    <p style="color: var(--color-primary);">**Gerente de Comunidade**</p>
-                    <p style="font-size: 0.9em; color: var(--color-text-muted);">Responsável por moderar o Discord, organizar eventos e gerenciar o suporte aos alunos.</p>
-                    <div class="gh-tags"><span class="gh-tag">Discord</span> <span class="gh-tag">Eventos</span> <span class="gh-tag">Moderação</span></div>
-                    <a href="#" class="gh-link-more" style="color: var(--color-accent);"><i class="fab fa-linkedin"></i> Perfil</a>
+                    <div class="gh-topic-card__header">
+                        <i class="fas fa-users-cog gh-topic-card__icon" style="color: #E91E63;"></i>
+                        <div>
+                            <span class="gh-topic-card__role" style="color: #E91E63;">Community Manager</span>
+                            <h3 class="gh-topic-card__title">Helena 'Mod' Paz</h3>
+                        </div>
+                    </div>
+                    <p>O coração da comunidade. Responsável pela organização do servidor Discord, mediação de conflitos, organização de eventos e suporte aos novos alunos.</p>
+                    <div><span class="gh-tag">Gestão de Comunidade</span> <span class="gh-tag">Eventos</span> <span class="gh-tag">Suporte</span></div>
+                    <a href="#" class="gh-button gh-button--small gh-button--discord" style="margin-top: 15px; width: 100%;"><i class="fab fa-discord"></i> Falar no Discord</a>
                 </article>
 
             </div>
         </section>
 
         <section class="gh-section gh-section--light">
-            <h2 class="gh-heading gh-heading--secondary">✉️ Fale Conosco</h2>
-            <p class="gh-section__intro">Tem uma proposta, parceria ou dúvida que não pode ser resolvida no Discord? Envie-nos uma mensagem diretamente.</p>
+            <h2 class="gh-heading gh-heading--secondary">💬 Entre em Contato</h2>
+            <p class="gh-section__intro">Não utilizamos e-mail ou formulários. Toda a nossa comunicação, suporte e mentoria acontece em tempo real dentro da nossa comunidade. Junte-se a nós nos canais oficiais.</p>
             
-            <form action="#" method="POST" class="gh-contact-form">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="email">E-mail para Contato:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="assunto">Assunto Principal:</label>
-                <input type="text" id="assunto" name="assunto" placeholder="Ex: Proposta de Mentoria, Parceria, Dúvida Geral" required>
-
-                <label for="mensagem">Sua Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-
-                <button type="submit" class="gh-button gh-button--primary gh-button--full" style="margin-top: 20px;">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </button>
-            </form>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                <a href="#" target="_blank" class="gh-button gh-button--discord gh-button--large">
+                    <i class="fab fa-discord" style="font-size: 1.5rem;"></i> Entrar no Servidor Discord
+                </a>
+                <a href="#" target="_blank" class="gh-button gh-button--youtube gh-button--large">
+                    <i class="fab fa-youtube" style="font-size: 1.5rem;"></i> Inscrever-se no YouTube
+                </a>
+            </div>
+            <p style="margin-top: 30px; color: var(--color-text-muted);">Dúvidas sobre parcerias ou imprensa? Chame um de nossos Admins no Discord.</p>
         </section>
 
     </main>
 
     <footer class="gh-footer">
-        <p>&copy; 2025 GameHub V6. Marítimo Edition.</p>
-        <div class="gh-footer__links">
-            <a href="sobre.html">Sobre</a> | <a href="equipe.html">Equipe</a> | <a href="#">Termos de Uso</a>
+        <div class="gh-footer__content">
+            <div class="gh-footer__col">
+                <h4>GameHub Academy</h4>
+                <p>A maior comunidade open-source de desenvolvimento de jogos. Criando criadores desde 2023.</p>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="aprendizado.html">Trilhas de Estudo</a></li>
+                    <li><a href="jogos.html">Jogos da Comunidade</a></li>
+                    <li><a href="equipe.html">Nossos Mentores</a></li>
+                </ul>
+            </div>
+            <div class="gh-footer__col">
+                <h4>Conecte-se</h4>
+                <ul>
+                    <li><a href="#" target="_blank"><i class="fab fa-discord"></i> Discord Oficial</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter / X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gh-footer__bottom">
+            <p>&copy; 2025 GameHub Academy. Todos os direitos reservados. Feito com <i class="fas fa-heart" style="color: var(--color-primary);"></i> pela comunidade.</p>
         </div>
     </footer>
 

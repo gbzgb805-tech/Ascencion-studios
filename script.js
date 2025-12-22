@@ -1,71 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Lógica do Menu Lateral (Sidebar - Mobile) ---
     const sidebar = document.getElementById('gh-sidebar');
-    const toggleButton = document.querySelector('.gh-nav__toggle');
-    const closeButton = document.querySelector('.gh-sidebar__close');
-    const overlay = document.getElementById('gh-overlay');
+    const toggleButtons = document.querySelectorAll('.gh-nav__toggle'); // Botão de abrir
+    const closeButton = document.querySelector('.gh-sidebar__close'); // Botão de fechar
+    const overlay = document.getElementById('gh-overlay'); // Fundo escuro
 
-    // Função para abrir/fechar o sidebar
+    // Função para alternar o estado do sidebar
     function toggleSidebar() {
+        if (!sidebar || !overlay) return;
+
         const isOpen = sidebar.classList.toggle('is-open');
         overlay.classList.toggle('is-visible', isOpen);
-        document.body.classList.toggle('sidebar-open', isOpen);
-    }
-
-    // Eventos de clique para abrir/fechar
-    if (toggleButton) {
-        toggleButton.addEventListener('click', toggleSidebar);
-    }
-
-    if (closeButton) {
-        closeButton.addEventListener('click', toggleSidebar);
-    }
-
-    if (overlay) {
-        overlay.addEventListener('click', toggleSidebar);
-    }
-
-    // Função para Acordeão (Necessário em index.html e aprendizado.html)
-    window.toggleAccordion = function(header) {
-        const content = header.nextElementSibling;
-        const icon = header.querySelector('.fas');
         
-        // Verifica se já está aberto
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-            content.style.maxHeight = '0';
-            content.style.paddingTop = '0';
-            content.style.paddingBottom = '0';
-            icon.classList.remove('accordion-icon-rotated');
+        // Bloqueia o scroll do corpo da página quando o menu está aberto
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    // Adiciona os eventos de clique
+    toggleButtons.forEach(btn => btn.addEventListener('click', toggleSidebar));
+    if (closeButton) closeButton.addEventListener('click', toggleSidebar);
+    if (overlay) overlay.addEventListener('click', toggleSidebar);
+
+    // --- Lógica do Acordeão (Accordion - Usado em Aprendizado e Index) ---
+    // Esta função é chamada diretamente pelo atributo 'onclick' no HTML
+    window.toggleAccordion = function(headerElement) {
+        const content = headerElement.nextElementSibling;
+        const icon = headerElement.querySelector('.fas.fa-chevron-down');
+
+        // Opcional: Fechar outros itens abertos para manter apenas um ativo por vez
+        /*
+        const allContents = document.querySelectorAll('.gh-accordion__content');
+        const allIcons = document.querySelectorAll('.gh-accordion__header .fa-chevron-down');
+        allContents.forEach(c => { if (c !== content) c.style.maxHeight = null; });
+        allIcons.forEach(i => { if (i !== icon) i.classList.remove('accordion-icon-rotated'); });
+        */
+
+        // Alterna o estado do item atual
+        if (content.style.maxHeight) {
+            // Se está aberto, fecha
+            content.style.maxHeight = null;
+            if (icon) icon.classList.remove('accordion-icon-rotated');
         } else {
-            // Abre o acordeão, calculando a altura necessária
-            content.style.maxHeight = content.scrollHeight + 30 + "px"; // +30 para o padding interno
-            content.style.paddingTop = '15px';
-            content.style.paddingBottom = '15px';
-            icon.classList.add('accordion-icon-rotated');
+            // Se está fechado, abre calculando a altura exata do conteúdo
+            content.style.maxHeight = content.scrollHeight + "px";
+            if (icon) icon.classList.add('accordion-icon-rotated');
         }
     };
+
+    // --- Lógica de Filtragem de Jogos (Usado apenas em jogos.html) ---
+    window.filterGames = function(tag) {
+        const gameCards = document.querySelectorAll('.gh-game-card');
+        const tagsList = document.querySelectorAll('.gh-tag');
+        const clickedTag = event.target; // O elemento que foi clicado
+
+        // 1. Atualiza visualmente qual tag está ativa
+        tagsList.forEach(t => t.classList.remove('gh-tag--active'));
+        if (clickedTag) clickedTag.classList.add('gh-tag--active');
+
+        // 2. Filtra os cards com base na tag selecionada
+        gameCards.forEach(card => {
+            const cardTagsAttr = card.getAttribute('data-tags');
+            // Verifica se a tag é 'all' OU se as tags do card contêm a tag clicada
+            if (tag === 'all' || (cardTagsAttr && cardTagsAttr.includes(tag))) {
+                // Mostra o card com um pequeno efeito de fade-in
+                card.style.display = 'flex';
+                card.style.opacity = '0';
+                setTimeout(() => card.style.opacity = '1', 50);
+            } else {
+                // Esconde o card
+                card.style.display = 'none';
+            }
+        });
+    };
 });
-
-// Função JS para Filtragem de Jogos (Apenas para jogos.html)
-window.filterGames = function(tag) {
-    const gameCards = document.querySelectorAll('.gh-game-card');
-    const tags = document.querySelectorAll('.gh-tag');
-
-    // 1. Atualiza o estado ativo das tags
-    tags.forEach(t => t.classList.remove('gh-tag--active'));
-    
-    // Procura a tag clicada para ativar (ignora o console.log se não achar a tag 'all')
-    const activeTag = document.querySelector(`[onclick="filterGames('${tag}')"]`);
-    if (activeTag) {
-        activeTag.classList.add('gh-tag--active');
-    }
-
-    // 2. Filtra os cards
-    gameCards.forEach(card => {
-        const cardTags = card.getAttribute('data-tags');
-        if (tag === 'all' || cardTags.includes(tag)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
