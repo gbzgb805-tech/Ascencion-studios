@@ -72,4 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
+    
+    // Define o ano atual via JavaScript no navegador do usuário
+    document.getElementById("year").textContent = new Date().getFullYear();
 });
